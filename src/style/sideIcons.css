@@ -1,0 +1,43 @@
+.sideIcons {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 88;
+  transform: translateX(-100px);
+}
+.sideIcon__overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 87;
+  pointer-events: none;
+}
+.sideIcons {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  width: auto;
+}
+.sideIcons svg {
+  width: 50px;
+  fill: white;
+}
+.sideIcons__container {
+  margin: 0 25px;
+}
+.sideIcons__container > div {
+  display: flex;
+  align-items: center;
+}
+.sideIcons__container > div:nth-child(2) {
+  margin: 35px 0;
+}
+.sideIcons__container svg {
+  margin-right: 30px;
+}
+.sideIcons__container p {
+  font-family: var(--font-two);
+  margin: 7px 0;
+  color: white;
+}
