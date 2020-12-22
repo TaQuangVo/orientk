@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <div className="navbar__body">
-                <div className="navbar__logo">
+                <div className="navbar__logo" onClick={()=>{window.location.href="/"}}>
                     <h1 className="logo__o">O</h1>
                     <h1 className="logo__rientkoket">RIENTKÖKET</h1>
                 </div>

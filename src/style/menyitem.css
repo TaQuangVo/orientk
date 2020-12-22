@@ -1,0 +1,108 @@
+.menyItem {
+  margin-bottom: 25px;
+}
+.menyItem a {
+  cursor: pointer;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+.menyItem__header {
+  display: flex;
+  justify-content: space-between;
+}
+.menyItem__header h2 {
+  font-family: var(--font-one);
+  font-size: 35px;
+}
+.menyItem__header h2:nth-child(1) {
+  cursor: pointer;
+}
+.menyItem__ingrediens p {
+  font-family: var(--font-one);
+  font-size: 25px;
+  font-weight: 500;
+}
+.menyItem__oder {
+  width: 80%;
+  margin: 0 auto 0 auto;
+  padding-top: 20px;
+  overflow: hidden;
+}
+.menyitem__antal {
+  display: flex;
+  justify-content: space-between;
+}
+.menyitem__setantal {
+  display: flex;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+.menyitem__setantal * {
+  font-family: var(--font-two);
+}
+.menyitem__setantal div {
+  margin-left: 15px;
+}
+.total p {
+  font-family: var(--font-two);
+}
+.menyitem__tilläg {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.onskemal * {
+  font-family: var(--font-two);
+}
+.onskemal {
+  display: flex;
+}
+.onskemal a {
+  margin-left: 7px;
+  text-decoration: underline;
+}
+.menyitem__Addtocard a {
+  font-weight: 600;
+  text-decoration: underline;
+  font-family: var(--font-two);
+}
+.menyitem__form {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.menyitem__form textarea {
+  width: 70%;
+  height: 100px;
+  resize: none;
+  border: solid 1px black;
+  border-radius: 10px;
+  outline: none;
+  padding: 7px;
+}
+.oder__close {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.oder__close a {
+  font-family: var(--font-two);
+}
+.menyitem__divider {
+  width: 80%;
+  height: 1px;
+  background-color: black;
+  margin: 10px auto 0 auto;
+}
+.wraper {
+  overflow: hidden;
+  transition: all 0.3s;
+  height: 0;
+}

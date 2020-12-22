@@ -51,6 +51,7 @@
   padding: 5px 20px;
   color: white;
   transition: all 300ms;
+  outline: none;
 }
 .navbar__oder:hover {
   background-color: white;

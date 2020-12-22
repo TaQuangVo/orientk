@@ -59,12 +59,6 @@ export default function Home() {
             background.current.style.transform = `scale(1.2) translate(${-50*XoffsetPercent}px , ${-50*YoffsetPercent}px)`;
 
 
-
-           
-            
-            
-
-
         }
     }, [])
 
@@ -106,10 +100,16 @@ export default function Home() {
                         </div>
                         <div className="section2__btns">
                             <div className="btn__willis">
-                                <button>Mitt emot Willy's</button>
+                                <button onClick={(e)=>{
+                                    e.preventDefault();
+                                    window.location.href="/meny/willy";
+                                }}>Mitt emot Willy's</button>
                             </div>
                             <div className="btn__orienthall">
-                                <button>Mitt emot orienthallen</button>
+                                <button onClick={(e)=>{
+                                    e.preventDefault();
+                                    window.location.href="/meny/orienthallen"
+                                }}>Mitt emot orienthallen</button>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="footer__copyright">
-                        <p>Coppyrigt © Orientköket</p>
+                        <p>© Coppyrigt Orientköket</p>
                     </div>
                 </section>
             </div>

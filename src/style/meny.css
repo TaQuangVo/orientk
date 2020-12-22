@@ -1,0 +1,132 @@
+.meny {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.meny__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.meny__background img {
+  width: 120%;
+}
+.nemy__overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.658);
+}
+.meny__body {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+}
+.meny__img {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.meny__img img {
+  height: 110%;
+}
+
+/*meny contents*/
+.meny__meny {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.meny__wraper {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.meny__pages {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.pages__wraper {
+  width: 200%;
+  display: flex;
+  height: 100%;
+  transition: all 0.3s;
+}
+.meny__list {
+  flex-grow: 2;
+  height: 100%;
+  margin-top: 17px;
+  margin: 15px;
+  position: relative;
+  overflow: scroll;
+  display: flex;
+}
+.meny__listDiv {
+  width: 100%;
+  position: absolute;
+}
+.meny__meny h3 {
+  font-family: var(--font-one);
+  font-size: 35px;
+  text-align: center;
+  margin-top: 30px;
+}
+.meny__nav {
+  display: flex;
+  justify-content: center;
+}
+.nav__mat h6,
+.nav__dricka h6 {
+  font-family: var(--font-two);
+  font-size: 20px;
+  font-weight: 300;
+  margin: 20px 0 0 20px;
+  cursor: pointer;
+}
+.nav__mat h6 {
+  font-weight: 600;
+}
+.meny__divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+.divider__downarrow {
+  font-family: var(--font-two);
+}
+.divider__line {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+.meny__kundvagn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.meny__kundvagn button {
+  background-color: transparent;
+  padding: 10px 15px;
+  border: solid 1px rgb(43, 42, 42);
+  border-radius: 99px;
+  font-family: var(--font-two);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 10px 0 20px 0;
+}
