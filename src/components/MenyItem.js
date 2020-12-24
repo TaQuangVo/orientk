@@ -40,19 +40,10 @@ export default function MenyItem() {
     }
 
     const handleOpenOder= (e, target, wraper) => {
-        const height = target.current.clientHeight;
-        const wraperH = wraper.current.clientHeight;
-        if(wraperH === 0 && e.target !== notclick.current){
-             wraper.current.style.height = `${height}px`;
-             wraper.current.addEventListener('transitionend', () => {
-                wraper.current.style.height="fit-content";
-              });
+      
+            wraper.current.classList.toggle("close")
               
-        }
-        if(wraperH > 0){
-            wraper.current.style.height=`${wraperH}px`;
-            wraper.current.style.height="0";
-        }
+
       
     }
     const handleCloseOder = (wraper) => {
@@ -72,7 +63,7 @@ export default function MenyItem() {
                 <div className="menyItem__ingrediens">
                     <p>Falafel, salad, tomat, lök, kebabsås</p>
                 </div>
-                <div ref={oderWraper} className="wraper">
+                <div ref={oderWraper} className="wraper close">
                     <div ref={oder} className="menyItem__oder">
                         <div className="menyitem__antal">
                             <div className="menyitem__setantal">
@@ -94,12 +85,12 @@ export default function MenyItem() {
                                 <a>Lägg till i kundvagnen</a>
                             </div>
                         </div>
-                        <div className="wraper" ref={formWraper}>
+                        <div className="wraper__area" ref={formWraper}>
                             <div ref={form} className="menyitem__form">
                                 <textarea />
                             </div>
                         </div>
-                        <div  className="oder__close"><a ref={notclick} onClick={()=>{handleCloseOder(oderWraper)}}>Stämg X</a></div>
+                        <div  className="oder__close"><a ref={notclick}>Stämg X</a></div>
                         <div className="menyitem__divider"></div>
                         
                     </div>

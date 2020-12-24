@@ -103,6 +103,14 @@
 }
 .wraper {
   overflow: hidden;
+  max-height: 300px;
+  transition: all 0.4s;
+}
+.close {
+  max-height: 0;
+}
+.wraper__area{
+height: 0;
+overflow: hidden;
   transition: all 0.3s;
-  height: 0;
 }
