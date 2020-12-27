@@ -5,6 +5,7 @@
   z-index: 88;
   transform: translateX(-100px);
   transition: all 0.3s;
+  z-index: 99;
 }
 .sideIcon__overlay {
   width: 100vw;

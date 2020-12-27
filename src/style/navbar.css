@@ -12,6 +12,7 @@
   display: flex;
   margin: auto;
   justify-content: space-between;
+  z-index: 99;
 }
 /*logo*/
 .navbar__logo {
@@ -63,4 +64,70 @@
 .navbar__cart {
   width: 38px;
   cursor: pointer;
+}
+
+/*buy now popup*/
+.popOverlay{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
+  pointer-events: all;
+}
+
+.buyNowPop{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.699);
+  position:fixed;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popClose {
+  display: none;
+}
+.popbody{
+  width: 600px;
+  height: 300px;
+  background-color: rgb(255, 145, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 99;
+  pointer-events: all;
+}
+.pop__btns{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+ 
+}
+.popHeader{
+  font-family: var(--font-one);
+  color:white;
+  font-size: 35px;
+}
+.popbody button {
+  width: 190px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 1000px;
+  font-size: 15px;
+  font-family: var(--font-two);
+  color: white;
+  transition:all 0.3s;
+}
+.popbody button:hover{
+  background-color: white;
+  color:rgb(255, 174, 0);
+  
 }

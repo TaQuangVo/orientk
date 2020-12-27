@@ -12,9 +12,9 @@ import SideIcons from "./components/SideIcons";
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
        <Navbar />
        <SideIcons />
-      <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact/>
           <Route path="/meny/:location" component={Meny} />

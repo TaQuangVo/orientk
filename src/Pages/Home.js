@@ -1,8 +1,9 @@
 import React,{useEffect, useRef} from 'react'
 import "../style/home.css"
+import {Link} from "react-router-dom";
 
 //gsap
-import { gsap } from "gsap";
+import { gsap, Power0 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
@@ -28,19 +29,19 @@ export default function Home() {
         })
         .to(".section1__content1", {
             opacity:0,
-            duration:.5,
-            ease: "Power0.easeNone"
+            duration:.4,
+            ease: Power0.easeNone
         })
         .to(".section1__content",{
             y: "-50%",
-            duration:"2",
-            ease: "Power0.easeNone"
+            duration:0.5,
+            ease: Power0.easeNone
         }, "<")
        .from(".section1__content2",{
            opacity:0, 
-           duration:.5,
-           ease: "Power0.easeNone"
-        }, 0.5)
+           duration:.3,
+           ease: Power0.easeNone
+        }, 0.2)
 
 
 
@@ -100,16 +101,14 @@ export default function Home() {
                         </div>
                         <div className="section2__btns">
                             <div className="btn__willis">
-                                <button onClick={(e)=>{
-                                    e.preventDefault();
-                                    window.location.href="/meny/willy";
-                                }}>Mitt emot Willy's</button>
+                                <Link to="/meny/willy">
+                                    <button>Mitt emot Willy's</button>
+                                </Link>
                             </div>
                             <div className="btn__orienthall">
-                                <button onClick={(e)=>{
-                                    e.preventDefault();
-                                    window.location.href="/meny/orienthallen"
-                                }}>Mitt emot orienthallen</button>
+                                <Link to = "/meny/orient">
+                                    <button>Mitt emot orienthallen</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

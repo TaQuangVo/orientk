@@ -1,16 +1,53 @@
-import React from 'react'
+import React,{useRef, useEffect} from 'react'
 import "../style/navbar.css"
+import {Link} from "react-router-dom";
+
+
+
+const handleOverlayOpen = (popup) => {
+    popup.current.classList.toggle("popClose");
+}
 
 export default function Navbar() {
+    const popup = useRef(null);
+
+    const closePop = () => {
+        popup.current.classList.add("popClose");
+        console.log("im in")
+    }
+    
     return (
         <div className="navbar">
-            <div className="navbar__body">
-                <div className="navbar__logo" onClick={()=>{window.location.href="/"}}>
-                    <h1 className="logo__o">O</h1>
-                    <h1 className="logo__rientkoket">RIENTKÖKET</h1>
+            <div ref={popup} className="buyNowPop popClose">
+                <div className="popOverlay" onClick={()=>{handleOverlayOpen(popup)}}></div>
+                <div className ="popbody">
+                    <div className="popHeader">
+                        <h2>Här finns vi:</h2> 
+                    </div>
+                    <div className="pop__btns">
+                        < div className="pop__willyBtn">
+                            <Link to="/meny/willy" onClick= {closePop}>
+                                <button>Mitt emot Willy's</button>
+                            </Link>
+                        </div>
+                    
+                        <div className="pop__orientBtn">
+                            <Link to="/meny/orient" onClick= {closePop}>
+                                <button >Mitt emot orienthallen</button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div className="navbar__body">
+                <Link to="/" onClick= {closePop}>
+                    <div className="navbar__logo" > 
+                        <h1 className="logo__o">O</h1>
+                        <h1 className="logo__rientkoket">RIENTKÖKET</h1>
+                    </div>
+                </Link>
                 <div className="navbar__leftIcons">
-                    <button className="navbar__oder">
+                    <button onClick={()=>{handleOverlayOpen(popup)}} className="navbar__oder">
                         Bäställ här
                     </button>
                     <div className="navbar__cart">
@@ -20,6 +57,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
+            
         </div>
     )
 }

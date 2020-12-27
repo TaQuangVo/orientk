@@ -46,6 +46,12 @@
   font-family: var(--font-two);
 }
 .menyitem__setantal div {
+  
+}
+.antal__form{
+  display:flex;
+  width: 60px;
+  justify-content: space-between;
   margin-left: 15px;
 }
 .total p {

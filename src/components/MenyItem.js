@@ -40,10 +40,12 @@ export default function MenyItem() {
     }
 
     const handleOpenOder= (e, target, wraper) => {
-      
-            wraper.current.classList.toggle("close")
-              
-
+            const wrapers = document.querySelectorAll(".wraper");
+            wrapers.forEach((wrap) => {
+                if(wrap !== wraper.current)
+                wrap.classList.add("close");
+            })
+            wraper.current.classList.toggle("close");
       
     }
     const handleCloseOder = (wraper) => {
@@ -68,9 +70,11 @@ export default function MenyItem() {
                         <div className="menyitem__antal">
                             <div className="menyitem__setantal">
                                 <p>Antal: </p>
-                                <div onClick={()=>{changeAntal("-")}}><a>-</a></div>
-                                <div>{antal}</div>
-                                <div onClick={()=>{changeAntal("+")}} className="plus" ><a>+</a></div>
+                                <div className="antal__form">
+                                    <div onClick={()=>{changeAntal("-")}}><a>-</a></div>
+                                    <div>{antal}</div>
+                                    <div onClick={()=>{changeAntal("+")}} className="plus" ><a>+</a></div>
+                                </div>
                             </div>
                             <div className="total">
                                 <p>80 kr</p>
@@ -90,7 +94,7 @@ export default function MenyItem() {
                                 <textarea />
                             </div>
                         </div>
-                        <div  className="oder__close"><a ref={notclick}>Stämg X</a></div>
+                        <div  className="oder__close"><a ref={notclick} onClick={(e)=>{handleOpenOder(e,oder,oderWraper)}}>Stäng X</a></div>
                         <div className="menyitem__divider"></div>
                         
                     </div>
