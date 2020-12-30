@@ -21,7 +21,7 @@ export default function Home() {
     useEffect(() => {
 
 
-        const tl1 = gsap.timeline({
+        gsap.timeline({
             scrollTrigger:{
                 scrub:true,
                 pin:".home",
@@ -68,7 +68,7 @@ export default function Home() {
     return (
     <div>
         <div ref={backgroundContainer} className="home__background ">
-                <img ref={background} src={homeBackground} />
+                <img ref={background} src={homeBackground} alt="background"/>
                 <div className="home__backgroundOverlay"></div>
             </div>
         <div   className="home">
@@ -100,7 +100,7 @@ export default function Home() {
                             <p>Låt oss fixa din oder medan du kommer</p>
                         </div>
                         <div className="section2__btns">
-                            <div className="btn__willis">
+                            <div className="btn__willys">
                                 <Link to="/meny/willy">
                                     <button>Mitt emot Willy's</button>
                                 </Link>

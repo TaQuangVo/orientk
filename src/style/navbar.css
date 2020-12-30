@@ -39,17 +39,15 @@
 }
 
 .navbar__oder {
-  font-size: 20px;
   border: 1px solid white;
   border-radius: 100px;
   margin-right: 40px;
   cursor: pointer;
-  padding: 0 15px;
   background-color: transparent;
   font-family: var(--font-two);
   font-weight: 400;
-  font-size: 22px;
-  padding: 5px 20px;
+  font-size: 18px;
+  padding: 7px 25px;
   color: white;
   transition: all 300ms;
   outline: none;
@@ -65,7 +63,9 @@
   width: 38px;
   cursor: pointer;
 }
-
+.navbar__cart svg{
+  transition: all 0.3s;
+}
 /*buy now popup*/
 .popOverlay{
   position: absolute;
@@ -129,5 +129,7 @@
 .popbody button:hover{
   background-color: white;
   color:rgb(255, 174, 0);
-  
+}
+.navbar__cart:hover svg{
+  transform: scale(1.2);
 }

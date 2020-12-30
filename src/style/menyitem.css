@@ -12,13 +12,26 @@
 .menyItem__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.menyItem__header h2 {
+.menyItem__afterprice, .menyItem__price{
   font-family: var(--font-one);
   font-size: 35px;
 }
 .menyItem__header h2:nth-child(1) {
   cursor: pointer;
+}
+.Meny__price{
+  display: flex;
+  font-family: var(--font-one);
+  align-items: center;
+
+}
+.menyItem__beforeprice{
+  font-size: 25px;
+  color: gray;
+  text-decoration: line-through;
+  margin-right: 15px;
 }
 .menyItem__ingrediens p {
   font-family: var(--font-one);
