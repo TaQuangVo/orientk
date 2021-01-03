@@ -110,13 +110,20 @@ export default function MenyItem({item, isfood}) {
                             <div className="menyitem__setantal">
                                 <p>Antal: </p>
                                 <div className="antal__form">
-                                    <div onClick={()=>{changeAntal("-")}}><a>-</a></div>
+                                    <div onClick={()=>{changeAntal("-")}}><p><a>-</a></p></div>
                                     <div>{antal}</div>
-                                    <div onClick={()=>{changeAntal("+")}} className="plus" ><a>+</a></div>
+                                    <div onClick={()=>{changeAntal("+")}} className="plus" ><p><a>+</a></p></div>
                                 </div>
                             </div>
                             <div className="total">
-                                <p>{item.price * antal + " kr"}</p>
+                                {
+                                    item.rabatt ? (
+                                        <p>{item.price * antal + " kr"}</p>
+
+                                    ) : (
+                                        <p>{item.rabattPrice * antal + " kr"}</p>  
+                                    ) 
+                                }
                             </div>
                         </div>
                             
@@ -124,18 +131,18 @@ export default function MenyItem({item, isfood}) {
                                 <div className="menyitem__tilläg">
                                 {isfood && (
                                     <div className="onskemal">
-                                        <p>Har du ett önske mål, </p>
-                                        <a onClick={()=>{handleOpen(form, formWraper)}}>Säg oss!</a>
+                                        <p></p>
+                                        <p onClick={()=>{handleOpen(form, formWraper)}}><a>Önskemål?</a></p>
                                     </div>
                                 )}
                                     <div onClick={add} className="menyitem__Addtocard">
-                                        <a>Lägg till i kundvagnen</a>
+                                        <p><a>Lägg till</a></p>
                                     </div>
                                 </div>
                                 {isfood && (
                                     <div className="wraper__area" ref={formWraper}>
                                         <div ref={form} className="menyitem__form">
-                                            <textarea onChange={updateSpecial} />
+                                            <textarea className="textarea" onChange={updateSpecial} />
                                         </div>
                                     </div>
                                 )}

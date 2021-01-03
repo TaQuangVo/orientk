@@ -54,7 +54,7 @@ export default function Navbar() {
                 </Link>
                 <div className="navbar__leftIcons">
                     <button onClick={()=>{handleOverlayOpen(popup)}} className="navbar__oder">
-                        Bäställ här
+                        Bäställ
                     </button>
                     <div onClick={handleOpenCart} className="navbar__cart">
                         <svg onClick={handleOpenCart} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.85 71.42" style={{fill:"white"}}>

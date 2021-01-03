@@ -13,10 +13,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+}
+.menyItem__name{
+  font-family: var(--font-one);
+  font-size: var(--font-size-L);
 }
 .menyItem__afterprice, .menyItem__price{
   font-family: var(--font-one);
-  font-size: 35px;
+  font-size: var(--font-size-L);
 }
 .menyItem__header h2:nth-child(1) {
   cursor: pointer;
@@ -28,14 +33,16 @@
 
 }
 .menyItem__beforeprice{
-  font-size: 25px;
+  font-size: var(--font-size-L);
+  transform:scale(.7);
   color: gray;
   text-decoration: line-through;
   margin-right: 15px;
 }
 .menyItem__ingrediens p {
   font-family: var(--font-one);
-  font-size: 25px;
+  font-size: var(--font-size-M);
+  color: rgb(58, 58, 58);
   font-weight: 500;
 }
 .menyItem__oder {
@@ -43,6 +50,7 @@
   margin: 0 auto 0 auto;
   padding-top: 20px;
   overflow: hidden;
+  font-size: calc(var(--font-size-S)*0.9);
 }
 .menyitem__antal {
   display: flex;
@@ -77,18 +85,19 @@
 }
 .onskemal * {
   font-family: var(--font-two);
+  text-decoration: underline;
 }
 .onskemal {
   display: flex;
 }
 .onskemal a {
-  margin-left: 7px;
   text-decoration: underline;
 }
 .menyitem__Addtocard a {
   font-weight: 600;
   text-decoration: underline;
   font-family: var(--font-two);
+  cursor: pointer;
 }
 .menyitem__form {
   padding-top: 20px;
@@ -132,4 +141,19 @@
 height: 0;
 overflow: hidden;
   transition: all 0.3s;
+}
+
+@media (max-width: 700px) {
+  .menyItem__header h2{
+    font-size: calc(var(--font-size-L) * 0.9);
+  }
+  .menyItem p{
+    font-size: calc(var(--font-size-S) * .75);
+  }
+  .menyItem__ingrediens p{
+    font-size: calc(var(--font-size-M) * .9);
+  }
+  .menyItem__beforeprice {
+    margin-right: 0px;
+  }
 }

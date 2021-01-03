@@ -8,14 +8,15 @@
 }
 .cart__title h3{
     font-family: var(--font-one);
-    font-size: 40px;
+    font-size: var(--font-size-L)
 }
 .cartItem__ingrediens{
     margin-left: 20px;
 }
 .cartItem__ingrediens p{
     font-family: var(--font-two);
-    font-size: 12x;
+    font-size: var(--font-size-S);
+    color: rgb(70, 70, 70);
 }
 .cartItem__antal{
     display: flex;
@@ -27,7 +28,8 @@
 }
 .cartItem__antal p{
     font-family: var(--font-two);
-    font-size: 16px;
+    font-size: var(--font-size-S);
+    color: rgb(70, 70, 70);
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -53,6 +55,13 @@
 }
 .cartItem__specialneed p {
     font-family: var(--font-two);
-    font-size: 16px;
+    font-size: var(--font-size-S);
+    color: rgb(70, 70, 70);
 }
 
+/*media query*/
+@media (max-width:500px) {
+    .cartItem p{
+        font-size: calc(var(--font-size-S) * 0.8);
+    }
+}

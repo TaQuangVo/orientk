@@ -27,7 +27,8 @@
 }
 .meny__body {
   position: relative;
-  width: 70vw;
+  width: 950px;
+  max-width: 80vw;
   height: 70vh;
   background-color: white;
   display: flex;
@@ -47,7 +48,7 @@
 
 /*meny contents*/
 .meny__meny {
-  width: 60%;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
 }
@@ -84,7 +85,7 @@
 }
 .meny__meny h3 {
   font-family: var(--font-one);
-  font-size: 35px;
+  font-size: var(--font-size-L);
   text-align: center;
   margin-top: 30px;
 }
@@ -95,7 +96,7 @@
 .nav__mat h6,
 .nav__dricka h6 {
   font-family: var(--font-two);
-  font-size: 20px;
+  font-size: calc(var(--font-size-M) * 0.9);
   font-weight: 300;
   margin: 20px 0 0 20px;
   cursor: pointer;
@@ -109,8 +110,8 @@
   align-items: center;
   margin: 10px 0;
 }
-.divider__downarrow {
-  font-family: var(--font-two);
+.divider__downarrow svg{
+  width: 12px;
 }
 .divider__line {
   height: 1px;
@@ -129,7 +130,61 @@
   border-radius: 99px;
   font-family: var(--font-two);
   font-weight: 600;
-  font-size: 14px;
+  font-size: calc(var(--font-size-S)*0.8);
   margin: 10px 0 20px 0;
   outline: none;
+}
+
+/*media query*/
+
+@media (max-width: 950px) {
+  .meny__img{
+    display:none
+  }
+}
+@media (max-width: 800px) {
+  .meny__wraper {
+    width: 90%;
+
+  }
+}
+
+@media (max-width: 550px) {
+  .meny__body {
+    max-width: 95vw;
+  }
+  .meny__list{
+    margin: 15px 0px;
+  }
+
+}
+@media (max-width: 450px) {
+  .menyitem__form .textarea{
+    width: 90%;
+  }
+  .meny__kundvagn button {
+    padding: 8px 13px;
+    font-size: calc(var(--font-size-S)*0.7);
+    margin: 0px 0 12  px 0;
+  }
+  .meny__nav h6{
+    font-size: calc(var(--font-size-M) * 0.7);
+    margin-top: 10px;
+  }
+  .meny__wraper h3{
+    margin-top: 15px;
+  }
+}
+@media (max-height: 770px) {
+  .meny{
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .meny__body{
+    height: calc(100vh - var(--nav-height) - 10px);
+    transform: translateY(-10px);
+  }
+  :root{
+    --nav-height:80px
+  }
 }

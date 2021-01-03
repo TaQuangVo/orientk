@@ -50,6 +50,8 @@ export default function Home() {
 
     useEffect(() => {
         window.onmousemove = (e) =>{
+            if(window.innerWidth > 600)
+           {
             const X = e.clientX;
             const Y = e.clientY;
             const Xoffset = X - window.innerWidth / 2;
@@ -58,9 +60,25 @@ export default function Home() {
             const YoffsetPercent = Yoffset / (window.innerHeight/2);
 
             background.current.style.transform = `scale(1.2) translate(${-50*XoffsetPercent}px , ${-50*YoffsetPercent}px)`;
-
-
+           }
         }
+
+        const handleBackgroundImgSize = () => {
+            if(window.innerWidth/window.innerHeight < 1.2){
+                background.current.style.width="auto";
+                background.current.style.height="120vh";
+            }else if(window.innerWidth/window.innerHeight > 1.2){
+                background.current.style.width="120vw";
+                background.current.style.height="auto";
+            }
+        }
+        handleBackgroundImgSize();
+        window.addEventListener("resize", handleBackgroundImgSize)
+        return() => {
+            window.removeEventListener("resize", handleBackgroundImgSize);
+        }
+            
+        
     }, [])
 
     
