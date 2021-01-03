@@ -27,7 +27,7 @@
 }
 .meny__body {
   position: relative;
-  width: 950px;
+  width: 1250px;
   max-width: 80vw;
   height: 70vh;
   background-color: white;
@@ -110,7 +110,7 @@
   align-items: center;
   margin: 10px 0;
 }
-.divider__downarrow svg{
+.divider__downarrow svg {
   width: 12px;
 }
 .divider__line {
@@ -130,7 +130,7 @@
   border-radius: 99px;
   font-family: var(--font-two);
   font-weight: 600;
-  font-size: calc(var(--font-size-S)*0.8);
+  font-size: calc(var(--font-size-S) * 0.8);
   margin: 10px 0 20px 0;
   outline: none;
 }
@@ -138,14 +138,13 @@
 /*media query*/
 
 @media (max-width: 950px) {
-  .meny__img{
-    display:none
+  .meny__img {
+    display: none;
   }
 }
 @media (max-width: 800px) {
   .meny__wraper {
     width: 90%;
-
   }
 }
 
@@ -153,38 +152,37 @@
   .meny__body {
     max-width: 95vw;
   }
-  .meny__list{
+  .meny__list {
     margin: 15px 0px;
   }
-
 }
 @media (max-width: 450px) {
-  .menyitem__form .textarea{
+  .menyitem__form .textarea {
     width: 90%;
   }
   .meny__kundvagn button {
     padding: 8px 13px;
-    font-size: calc(var(--font-size-S)*0.7);
-    margin: 0px 0 12  px 0;
+    font-size: calc(var(--font-size-S) * 0.7);
+    margin: 0px 0 12 px 0;
   }
-  .meny__nav h6{
+  .meny__nav h6 {
     font-size: calc(var(--font-size-M) * 0.7);
     margin-top: 10px;
   }
-  .meny__wraper h3{
+  .meny__wraper h3 {
     margin-top: 15px;
   }
 }
 @media (max-height: 770px) {
-  .meny{
+  .meny {
     flex-direction: column;
     justify-content: flex-end;
   }
-  .meny__body{
+  .meny__body {
     height: calc(100vh - var(--nav-height) - 10px);
     transform: translateY(-10px);
   }
-  :root{
-    --nav-height:80px
+  :root {
+    --nav-height: 80px;
   }
 }
