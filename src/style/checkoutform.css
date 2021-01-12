@@ -1,0 +1,62 @@
+.checkoutform {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkoutform__inputs {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  width: 100%;
+  background-color: rgb(255, 171, 60);
+  box-shadow: rgba(194, 111, 2, 0.356) 0px 0px 6px 3px;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+.checkoutform__inputs input {
+  flex-grow: 1;
+  padding: 0 5px;
+  color: "white";
+  font-weight: 500;
+  font-size: 15px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.checkoutform__inputs input::placeholder {
+  color: white;
+}
+.FormRow {
+  background-color: rgb(255, 171, 60);
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: rgba(194, 111, 2, 0.308) 0px 0px 6px 3px;
+  height: 45px;
+  margin-top: 30px;
+}
+.checkoutform button {
+  margin-top: 20px;
+}
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 0 5px;
+}
+.checkoutform button {
+  background-color: #ff5100;
+  width: 135px;
+  height: 45px;
+  border: none;
+  box-shadow: rgba(194, 111, 2, 0.308) 0px 0px 6px 3px;
+  border-radius: 4px;
+  color: white;
+}

@@ -1,18 +1,22 @@
 import React,{useContext, useRef} from 'react';
 import "../style/cart.css";
 
+//stipe
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
+
 //context
 import {CartContext} from "../contexts/CartContext";
 
 //component
 import CartItem from "../components/CartItem";
+import CheckOutForm from "../components/CheckoutForm";
 
-const handleCloseCart = () =>{
-    const overlay = document.querySelector(".cart__overlay");
-    const body = document.querySelector(".cart");
-    overlay.classList.add("cart__overlay--close");
-    body.classList.add("cart--close");
-}   
+
+
+const stripePromise = loadStripe("pk_test_lcbWDSG0RW52kYBPbqG5SVYT00iZ4NBwwE");
+
+
 
 
 export default function Cart() {
@@ -22,6 +26,13 @@ export default function Cart() {
     const handleOder = (val) => {
         cartPaymentWrap.current.style.transform =`translateX(${val})`;
     }
+    const handleCloseCart = () =>{
+        const overlay = document.querySelector(".cart__overlay");
+        const body = document.querySelector(".cart");
+        overlay.classList.add("cart__overlay--close");
+        body.classList.add("cart--close");
+    }   
+    
 console.log(cart);
     return (
         <div>
@@ -58,7 +69,24 @@ console.log(cart);
                     </div>
                
                     <div className="cart__payment__wraper">
-                        
+                        <div className="cart__payment">
+                                <h1>Betalning</h1>
+                                <div className="payment__btns">
+                                    <button>Med kort</button>
+                                    <button>Vid hämtning</button>
+                                </div>
+                                <div className="payment__card">
+                                    <Elements stripe={stripePromise}>
+                                        <div className="card__payment__divider"></div>
+                                        <h2>Kort betalning</h2>
+                                        <CheckOutForm />
+                                    </Elements>
+                                </div>
+                                <div className="payment__onPickUp">
+
+                                </div>
+                                <div className="backToCart"><h4>Tillbaka till Kundvagnen</h4></div>
+                        </div>
                     </div> 
                 </div>
             </div>
