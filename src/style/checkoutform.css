@@ -63,6 +63,17 @@
 .checkoutform button:hover {
   background-color: #db4500;
 }
+.checkoutform button:disabled,
+.checkoutform button[disabled] {
+  background-color: #db450062;
+  cursor: auto;
+}
+.checkout__error {
+  font-family: var(--font-two);
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(255, 221, 221);
+}
 
 /*query media*/
 @media (max-width: 500px) {
