@@ -1,4 +1,4 @@
-import React,{useRef, useEffect, useContext} from 'react'
+import React,{useRef, useContext} from 'react'
 import "../style/meny.css"
 
 //contexts
@@ -10,14 +10,13 @@ import {DrinkContext} from "../contexts/DrinkContext";
 import MenyItems from "../components/MenyItem";
 
 //imgage
-import homeBackground from "../img/homeBackground.jpg";
 import kebab from "../img/kebab.jpg";
 
 export default function Meny() {
     const pages = useRef(null);
     const mat = useRef(null);
     const dricka = useRef(null);
-    const background = useRef(null);
+
 
     const foods = useContext(MenyContext);
     const drinks = useContext(DrinkContext);
@@ -44,49 +43,10 @@ export default function Meny() {
         body.classList.remove("cart--close");
     } 
 
-    useEffect(() => {
-
-        const handleHover = (e) => {
-            if(window.innerWidth > 600)
-            {
-                const X = e.clientX;
-                const Y = e.clientY;
-                const Xoffset = X - window.innerWidth / 2;
-                const Yoffset = Y - window.innerHeight / 2;
-                const XoffsetPercent = Xoffset / (window.innerWidth/2);
-                const YoffsetPercent = Yoffset / (window.innerHeight/2);
-                if(background.current){
-                    background.current.style.transform = `scale(1.2) translate(${-50*XoffsetPercent}px , ${-50*YoffsetPercent}px)`;
-                }
-            }
-        }
-
-        window.addEventListener("mousemove", handleHover);
-
-        const handleBackgroundImgSize = () => {
-            if(window.innerWidth/window.innerHeight < 1.2){
-                background.current.style.width="auto";
-                background.current.style.height="120vh";
-            }else if(window.innerWidth/window.innerHeight > 1.2){
-                background.current.style.width="120vw";
-                background.current.style.height="auto";
-            }
-        }
-        handleBackgroundImgSize();
-        window.addEventListener("resize", handleBackgroundImgSize)
-        return() => {
-            window.removeEventListener("resize", handleBackgroundImgSize);
-            window.removeEventListener("mousemove", handleHover);
-            console.log("im in")
-        }
-    }, [])
+   
 
     return (
             <div className="meny">
-                <div className="meny__background">
-                        <img ref={background} src={homeBackground} alt="background"/>
-                        <div className="nemy__overlay"></div>
-                </div>
                 <div className="meny__body">
                     <div className="meny__img">
                         <img src={kebab} alt="kebab"></img>
@@ -106,19 +66,25 @@ export default function Meny() {
                                 <div ref = {pages} className="pages__wraper">
                                     <div className="meny__list">
                                         <div className="meny__listDiv">
-                                            {
+                                            {   foods !== null ? (
                                                 foods.map((food, index) => (
                                                     <MenyItems item={food} isfood={true} key={index}/>
                                                 ))
+                                            ) : (
+                                                <h3 className="loading">Loading...</h3>
+                                            )
                                             }
                                         </div>
                                     </div>
                                     <div className="meny__list">
                                         <div className="meny__listDiv">
-                                        {
-                                                drinks.map((drink,index) => (
-                                                    <MenyItems item={drink} isfood={false} key={index}/>
+                                        {   drinks !== null ? (
+                                               drinks.map((drink,index) => (
+                                                <MenyItems item={drink} isfood={false} key={index}/>
                                                 ))
+                                            ) : (
+                                                <h3 className="loading">Loading...</h3>
+                                            )
                                         }
                                         
                                         </div>

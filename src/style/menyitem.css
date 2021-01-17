@@ -13,28 +13,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-.menyItem__name{
+.menyItem__name {
   font-family: var(--font-one);
   font-size: var(--font-size-L);
 }
-.menyItem__afterprice, .menyItem__price{
+.menyItem__afterprice,
+.menyItem__price {
   font-family: var(--font-one);
   font-size: var(--font-size-L);
 }
 .menyItem__header h2:nth-child(1) {
   cursor: pointer;
 }
-.Meny__price{
+.Meny__price {
   display: flex;
   font-family: var(--font-one);
   align-items: center;
-
 }
-.menyItem__beforeprice{
+.menyItem__beforeprice {
   font-size: var(--font-size-L);
-  transform:scale(.7);
+  transform: scale(0.7);
   color: gray;
   text-decoration: line-through;
   margin-right: 15px;
@@ -50,7 +49,7 @@
   margin: 0 auto 0 auto;
   padding-top: 20px;
   overflow: hidden;
-  font-size: calc(var(--font-size-S)*0.9);
+  font-size: calc(var(--font-size-S) * 0.9);
 }
 .menyitem__antal {
   display: flex;
@@ -67,10 +66,9 @@
   font-family: var(--font-two);
 }
 .menyitem__setantal div {
-  
 }
-.antal__form{
-  display:flex;
+.antal__form {
+  display: flex;
   width: 60px;
   justify-content: space-between;
   margin-left: 15px;
@@ -93,11 +91,26 @@
 .onskemal a {
   text-decoration: underline;
 }
+.menyitem__Addtocard {
+  display: flex;
+}
+.addtocard {
+  overflow: hidden;
+  transition: all 300ms ease;
+  max-width: 0px;
+}
+.menyitem__Addtocard p {
+  overflow: hidden;
+  white-space: nowrap;
+}
 .menyitem__Addtocard a {
   font-weight: 600;
   text-decoration: underline;
   font-family: var(--font-two);
   cursor: pointer;
+}
+.menyitem__Addtocard p:nth-child(2) a {
+  text-decoration: none;
 }
 .menyitem__form {
   padding-top: 20px;
@@ -137,21 +150,26 @@
 .close {
   max-height: 0;
 }
-.wraper__area{
-height: 0;
-overflow: hidden;
+.wraper__area {
+  height: 0;
+  overflow: hidden;
   transition: all 0.3s;
 }
 
+/*modified*/
+.showAddToCard {
+  max-width: 100px;
+}
+
 @media (max-width: 700px) {
-  .menyItem__header h2{
+  .menyItem__header h2 {
     font-size: calc(var(--font-size-L) * 0.9);
   }
-  .menyItem p{
-    font-size: calc(var(--font-size-S) * .75);
+  .menyItem p {
+    font-size: calc(var(--font-size-S) * 0.75);
   }
-  .menyItem__ingrediens p{
-    font-size: calc(var(--font-size-M) * .9);
+  .menyItem__ingrediens p {
+    font-size: calc(var(--font-size-M) * 0.9);
   }
   .menyItem__beforeprice {
     margin-right: 0px;

@@ -13,6 +13,7 @@ import Meny from "./Pages/Meny";
 import Navbar from "./components/Navbar";
 import SideIcons from "./components/SideIcons";
 import Cart from "./components/Cart";
+import Background from "./components/Background";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <BrowserRouter>
         <Navbar />
         <SideIcons />
+        <Background />
         <Cart />
           <Switch>
             <Route path="/" component={Home} exact/>

@@ -1,36 +1,20 @@
-import react,{useState,createContext} from "react";
+import react,{useState,createContext,useEffect} from "react";
+import axios from "axios";
 
 export const DrinkContext = createContext();
 
 const DrinkContextProvider = (props) => {
-    const [drinks, setDrinks] = useState([
-        {
-            id:"123456789",
-            name: "Coca-cola",
-            price: 10,
-            rabatt: false,
-            rabattPrice:10,
-            
-        },{
-            id:"223453789",
-            name: "Fanta Exotic",
-            price: 10,
-            rabatt: false,
-            rabattPrice:10,
-        },{
-            id:"324456789",
-            name: "Yran",
-            price: 10,
-            rabatt: false,
-            rabattPrice:10,
-        },{
-            id:"423456449",
-            name: "PowerKing",
-            price: 10,
-            rabatt: false,
-            rabattPrice:10,
-        }
-    ])
+    const [drinks, setDrinks] = useState(null)
+
+    useEffect(() => {
+        axios.get("https://us-central1-orientk-23b4b.cloudfunctions.net/api/drinks")
+        .then(meny => {
+            setDrinks(meny.data);
+            console.log(meny.data);
+        })
+        .catch(err => console.log(err))
+    },[]);
+
     return(
         <DrinkContext.Provider value={drinks}>
             {props.children}

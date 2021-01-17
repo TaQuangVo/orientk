@@ -40,9 +40,6 @@
   height: 45px;
   margin-top: 30px;
 }
-.checkoutform button {
-  margin-top: 20px;
-}
 .StripeElement--webkit-autofill {
   background: transparent !important;
 }
@@ -59,4 +56,20 @@
   box-shadow: rgba(194, 111, 2, 0.308) 0px 0px 6px 3px;
   border-radius: 4px;
   color: white;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.checkoutform button:hover {
+  background-color: #db4500;
+}
+
+/*query media*/
+@media (max-width: 500px) {
+  .checkoutform {
+    width: 85%;
+  }
+  .checkoutform button {
+    height: 40px;
+  }
 }

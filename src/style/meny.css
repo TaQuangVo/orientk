@@ -5,6 +5,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  z-index: 50;
 }
 .meny__background {
   position: absolute;
@@ -82,6 +83,12 @@
 .meny__listDiv {
   width: 100%;
   position: absolute;
+}
+.meny__listDiv .loading {
+  text-align: center;
+  font-family: var(--font-two);
+  font-weight: 300;
+  font-size: 18px;
 }
 .meny__meny h3 {
   font-family: var(--font-one);

@@ -24,6 +24,8 @@ export default function MenyItem({item, isfood}) {
     const oder = useRef(null);
     const oderWraper = useRef(null)
     const notclick = useRef(null)
+    const laggtill = useRef(null);
+    const tillaggad = useRef(null)
 
     const changeAntal = (tecken) => {
         if(tecken === "+"){
@@ -69,18 +71,28 @@ export default function MenyItem({item, isfood}) {
         }
     }
     const add = () => {
+        laggtill.current.classList.remove("showAddToCard");
+        tillaggad.current.classList.add("showAddToCard");
+        setTimeout(function(){ 
+            laggtill.current.classList.add("showAddToCard");
+            tillaggad.current.classList.remove("showAddToCard");
+        }, 700);
         const toAdd = {
             id : item.id,
             name : item.name,
             ingrediens : item.ingrediens,
             price : item.price,
+            rabattPrice: item.rabattPrice,
             rabatt : item.rabatt,
             place: location,
             special : special,
             antal: antal,
-            total: antal*item.price,
+            total:  item.rabatt? item.rabattPrice * antal : antal*item.price
         }
+        console.log(antal);
+        console.log(antal*item.price);
         addToCard(toAdd);
+        
     }
     return (
  
@@ -88,7 +100,7 @@ export default function MenyItem({item, isfood}) {
                 <div className="menyItem__header">
                     <h2  onClick={(e)=>{handleOpenOder(e,oder,oderWraper)}} className="menyItem__name">{item.name}</h2>
                         {
-                            item.rabatt ? (
+                            !item.rabatt ? (
                                 <h2 className="menyItem__price">{item.price+ " kr"}</h2>
                             ):(
                                 <div className="Meny__price">
@@ -117,7 +129,7 @@ export default function MenyItem({item, isfood}) {
                             </div>
                             <div className="total">
                                 {
-                                    item.rabatt ? (
+                                    !item.rabatt ? (
                                         <p>{item.price * antal + " kr"}</p>
 
                                     ) : (
@@ -135,8 +147,10 @@ export default function MenyItem({item, isfood}) {
                                         <p onClick={()=>{handleOpen(form, formWraper)}}><a>Önskemål?</a></p>
                                     </div>
                                 )}
-                                    <div onClick={add} className="menyitem__Addtocard">
-                                        <p><a>Lägg till</a></p>
+                                    <div onClick={(e) => {add()}} className="menyitem__Addtocard">
+                                        <div ref={laggtill} className="addtocard showAddToCard"><p><a>Lägg till</a></p></div>
+                                        <div ref={tillaggad} className="addtocard"><p><a>Tilläggad</a></p></div>
+                                        
                                     </div>
                                 </div>
                                 {isfood && (

@@ -1,31 +1,18 @@
-import React,{useState,createContext} from "react";
+import React,{useState,createContext,useEffect} from "react";
 
 export const CartContext = createContext();
 
 const CartContextProvider = (props) => {
-    const [cart, setCart] = useState([
-        {
-            id:"111111111",
-            name:"Kebabrulle",
-            ingrediens:"Kebab, salad, tomat, lök, kebabsås",
-            price:50,
-            rabatt:false,
-            place: "willys",
-            special: "",
-            antal: 1,
-            total: 50,
-        },{
-            id:"111134411",
-            name:"Coca-cola",
-            ingrediens: null,
-            price:10,
-            rabatt:false,
-            place: "willys",
-            special: "",
-            antal:2,
-            total:20
-        }
-    ]);
+    const [cart, setCart] = useState([]);
+    const [cartTotal, setCartTotal] = useState(0);
+
+    useEffect(() => {
+        var totalAmount = 0;
+        cart.forEach(item => {
+            totalAmount += item.total;
+        })
+        setCartTotal(totalAmount);
+    }, [cart])
     
     const changeAntal = (tecken, oder) => {
         setCart((prev)=>{     
@@ -83,7 +70,8 @@ const CartContextProvider = (props) => {
                         else{
                             return{
                                 ...item,
-                                antal: item.antal + addItem.antal
+                                antal: item.antal + addItem.antal,
+                                total: !item.rabatt ? (item.antal + addItem.antal)* item.price : (item.antal + addItem.antal)* item.rabattPrice
                             }
                         }
                     })
@@ -108,7 +96,7 @@ const CartContextProvider = (props) => {
     
     
     return(
-        <CartContext.Provider value={{cart, changeAntal,removeItem,addToCard}}>
+        <CartContext.Provider value={{cart, cartTotal, changeAntal,removeItem,addToCard}}>
             {props.children}
         </CartContext.Provider>
     )

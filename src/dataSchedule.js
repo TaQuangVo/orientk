@@ -25,3 +25,41 @@ const cartItem = {
     antal: 1,
     total: 50,
 };
+const creatmeny = {
+    isFood: true,
+    name:"name of the food",
+    ingrediens:"what ever inside the food",
+    price:100,
+    rabatt:true,
+    rabattPrice: 50,
+}
+const payment_request = [
+    {
+        "id":"dZ9IiVgTNWHqLedMduZu",
+        "name": "Kebabsalad",
+        "price": 12,
+        "rabatt": true,
+        "rabattPrice": 2,
+        "antal": 2,
+        "special": "item.special",
+        "place": "willys",
+        "ingrediens": "massa med saker"
+    }
+]
+const payment_request_return = {
+    "oders": [
+        {
+            "id": "thisismyfkingid1",
+            "name": "customrulle1",
+            "price": 5001,
+            "rabatt": false,
+            "rabattPrice": 50001,
+            "priceToCalcutate": 5001,
+            "antal": 1,
+            "totalPrice": 5001,
+            "special": "mycket lök"
+        }
+    ],
+    "total": 325250,
+    "client_secret": "pi_1I9tiJA7D489xVTkr3BwZ4ku_secret_Sz3NWiWpvei9PzSj0LEvkn3Ru"
+}

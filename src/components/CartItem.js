@@ -29,7 +29,6 @@ export default function CartItem({item, index, changeAntal, removeItem}) {
                 <div onClick={()=>{removeItem(index)}} className="cartItem__remove">
                     <p>Tabort</p>
                 </div>
-                
             </div>
             <div className="cartItem__specialneed">
                 {
