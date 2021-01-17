@@ -52,7 +52,7 @@ export default function Background() {
     return (
         <div ref={backgroundContainer} className="home__background ">
                 <img ref={background} src={homeBackground} alt="background"/>
-                <div className="home__backgroundOverlay"></div>
+                <div style={{opacity:"50%"}} className="home__backgroundOverlay"></div>
         </div>
     )
 }

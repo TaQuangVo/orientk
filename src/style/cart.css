@@ -122,7 +122,6 @@
 }
 .payment__img img {
   width: 100%;
-  opacity: 90%;
 }
 .payment__btns {
   width: 100%;
@@ -270,5 +269,14 @@
   }
   .cart__payment h1 {
     margin-bottom: 30px;
+  }
+}
+@media (max-height: 750px) {
+  .cart__content {
+    padding-bottom: 30px;
+  }
+  .backToCart {
+    margin-top: 30px;
+    margin-bottom: 80px;
   }
 }

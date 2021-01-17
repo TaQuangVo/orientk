@@ -23,7 +23,7 @@ const CartContextProvider = (props) => {
                         return{
                         ...items,
                          antal: items.antal+1,
-                         total: (items.antal+1) * items.price,
+                         total: items.rabatt ? (items.antal+1) * items.rabattPrice : (items.antal+1) * items.price,
                          }
                     }
                     else{
@@ -33,7 +33,7 @@ const CartContextProvider = (props) => {
                             return{
                                 ...items,
                                 antal: items.antal-1,
-                                total: (items.antal-1) * items.price,
+                                total: items.rabatt ? (items.antal-1) * items.rabattPrice : (items.antal-1) * items.price,
                             }
                         }
                          
