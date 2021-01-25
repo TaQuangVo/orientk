@@ -31,7 +31,7 @@ export default function Cart() {
     const handleOder = (val) => {
         if(cart.length > 0){
             cartPaymentWrap.current.style.transform =`translateX(${val})`;
-            console.log(cart);
+            //console.log(cart);
         }
     }
     const handleCloseCart = () =>{
@@ -108,7 +108,7 @@ export default function Cart() {
                                         <h2>Betala vid hämtning</h2>
                                         <p>Vi tar emot kort och swish som betalning vid hämtning</p>
                                         <p>*Missar du inte  10% rabatt vid <a>kort-betaning</a>?*</p>
-                                        <h4>Totala summa: 150kr</h4>
+                                        <h4>Totala summa: {cartTotal}kr</h4>
                                         <button>Oder</button>
                                 </div>
                                 <div className="backToCart"><h4 onClick={() => {handleOder("0%")}}>Tillbaka till Kundvagnen</h4></div>

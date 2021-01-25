@@ -11,7 +11,7 @@ export default function SideIcons() {
         const icons = document.querySelectorAll(".sideIcons__container svg");
         icons.forEach((icon) => {
             icon.addEventListener("click", ()=>{
-                console.log("clicked");
+                //console.log("clicked");
                  sideIcon.current.style.zIndex="99"
                 sideIcon.current.style.transform="translateX(-100%)";
                 sideIcon.current.style.backgroundColor="rgba(0, 0, 0, 0.568)"

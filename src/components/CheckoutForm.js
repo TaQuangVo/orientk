@@ -97,7 +97,13 @@ export default function CheckOutForm() {
     });
 
     //confirm order and get clientsecret,
-    const confirmOrder = await axios.post("https://us-central1-orientk-23b4b.cloudfunctions.net/api/payment_intents",payload);
+    const confirmOrder = await axios.post("https://us-central1-orientk-23b4b.cloudfunctions.net/api/payment_intents",
+    {
+      "name":name,
+      "email":email,
+      "paymentMethod":"card",
+      "oder": payload,
+    });
 
     if(confirmOrder.data.client_secret == null){
       console.log("nått gick fel med att hämta client_secrett från stripe, kan va någon i meny inte finns längre i databasen ");
@@ -107,7 +113,7 @@ export default function CheckOutForm() {
       const cardElement = elements.getElement(CardElement);
       const billingDetails = {
         name: name,
-        email: (email=="")? null : email,
+        email: (email==="")? null : email,
       }
       //requse payment medthod;
       const paymentMethodReq = await stripe.createPaymentMethod({
@@ -115,7 +121,7 @@ export default function CheckOutForm() {
         card: cardElement,
         billing_details:billingDetails,
       })
-      if(paymentMethodReq.paymentMethod == undefined){
+      if(paymentMethodReq.paymentMethod === undefined){
         setChekoutError(paymentMethodReq.error.message) ;
         console.log("nått gick fel med att skappfa en betalningmetod, kan va att att fel kortnr");
         
@@ -124,6 +130,18 @@ export default function CheckOutForm() {
         const confirmCardPayment = await stripe.confirmCardPayment(confirmOrder.data.client_secret,{
           payment_method: paymentMethodReq.paymentMethod.id,
         });
+        if(confirmCardPayment.paymentIntent.status === "succeeded"){
+          const changeOderStatusBackend = await axios.post("https://us-central1-orientk-23b4b.cloudfunctions.net/api/confirmpayment",
+          {
+            "paymentIntentId":confirmCardPayment.paymentIntent.id,
+            "docId": confirmOrder.data.docId
+          });
+          console.log(changeOderStatusBackend);
+        }else{
+          setChekoutError("betalningen gick inte igenom, försök igen");
+        }
+        
+        
         console.log(confirmOrder);
         console.log(paymentMethodReq);
         console.log(confirmCardPayment);

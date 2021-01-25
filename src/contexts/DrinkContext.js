@@ -10,7 +10,7 @@ const DrinkContextProvider = (props) => {
         axios.get("https://us-central1-orientk-23b4b.cloudfunctions.net/api/drinks")
         .then(meny => {
             setDrinks(meny.data);
-            console.log(meny.data);
+            //console.log(meny.data);
         })
         .catch(err => console.log(err))
     },[]);

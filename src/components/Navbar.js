@@ -20,6 +20,18 @@ export default function Navbar() {
     const closePop = () => {
         popup.current.classList.add("popClose");
     }
+    const getNsetVh = () => {
+        let vh = window.innerHeight;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
+
+    useEffect(() => {
+        getNsetVh();
+        window.addEventListener("resize", getNsetVh);
+        return () => {
+            window.removeEventListener("resize", getNsetVh);
+        }
+    },)
 
     
     return (

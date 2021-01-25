@@ -33,18 +33,25 @@ const creatmeny = {
     rabatt:true,
     rabattPrice: 50,
 }
+
+//use to confirm order
 const payment_request = [
     {
-        "id":"dZ9IiVgTNWHqLedMduZu",
-        "name": "Kebabsalad",
-        "price": 12,
-        "rabatt": true,
-        "rabattPrice": 2,
-        "antal": 2,
-        "special": "item.special",
-        "place": "willys",
-        "ingrediens": "massa med saker"
-    }
+        "name":"name",
+        "email":"email@email.com",
+        "paymentMethod":"card",
+        "payload": {
+            "id":"dZ9IiVgTNWHqLedMduZu",
+            "name": "Kebabsalad",
+            "price": 12,
+            "rabatt": true,
+            "rabattPrice": 2,
+            "antal": 2,
+            "special": "item.special",
+            "place": "willys",
+            "ingrediens": "massa med saker"
+        },
+      }
 ]
 const payment_request_return = {
     "oders": [

@@ -89,8 +89,8 @@ export default function MenyItem({item, isfood}) {
             antal: antal,
             total:  item.rabatt? item.rabattPrice * antal : antal*item.price
         }
-        console.log(antal);
-        console.log(antal*item.price);
+        //console.log(antal);
+        //console.log(antal*item.price);
         addToCard(toAdd);
         
     }

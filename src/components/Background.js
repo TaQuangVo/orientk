@@ -43,7 +43,7 @@ export default function Background() {
         return() => {
             window.removeEventListener("resize", handleBackgroundImgSize);
             window.removeEventListener("mousemove", handleHover);
-            console.log("im in")
+            //console.log("im in")
         }
             
         
